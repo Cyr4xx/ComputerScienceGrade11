@@ -1,18 +1,21 @@
 package CompSCi;
 
+import java.util.*;
+
 public class DriversLicense {
     public static void main(String[] args){
-        String name = "Skibidi"; // Do this next time if lazy
-        String dob;
-        String expiry;
-        String address;
-        String sex;
+        Scanner input = new Scanner(System.in);
 
-
-        dob = "June 9, 2003";
-        expiry = "August 18, 2026";
-        address = "777 Jane St.";
-        sex = "Male";
+        System.out.println("What's your license expiry? ");
+        String expiry = input.nextLine();
+        System.out.println("What's your address?");
+        String address = input.nextLine();
+        System.out.println("What's your sex?");
+        String sex = input.nextLine();
+        System.out.println("What's your date of birth?");
+        String dob = input.nextLine();
+        System.out.println("What's your name?");
+        String name = input.nextLine();
 
         System.out.println(name + "\n" + dob + "\n" + expiry + "\n" + address + "\n" + sex);
 
