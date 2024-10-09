@@ -20,52 +20,60 @@ public class A1Q1 {
         while(true){
             switch(numOfRound) {
                 case 1:
-                    for (int x = 0; x < numOfRound; x++){
-                        dice1 = generator.nextInt(6);
-                        dice2 = generator.nextInt(6);
-                        valOfDie += " " + dice1 + " " + dice2;
-                        sumOfDie +=  dice1 + dice2;
-                    }
-                    break;
-
-                case 2:
-                    for (int x = 0; x < numOfRound; x++){
-                        dice1 = generator.nextInt(6);
-                        dice2 = generator.nextInt(6);
-                        valOfDie += " " + dice1 + " " + dice2;
-                        sumOfDie +=  dice1 + dice2;
-                    }
-
-                    break;
-                case 3:
-                    for (int x = 0; x < numOfRound; x++){
-                        dice1 = generator.nextInt(6);
-                        dice2 = generator.nextInt(6);
-                        valOfDie += " " + dice1 + " " + dice2;
-                        sumOfDie +=  dice1 + dice2;
-                    }
-
-                    break;
-
-                case 4:
                     for (int x = 1; x < numOfRound + 1; x++){
-                        dice1 = generator.nextInt(6);
-                        dice2 = generator.nextInt(6);
-                        valOfDie = " Round " + x + " " + dice1 + " " + dice2;
+                        dice1 = generator.nextInt(6) + 1;
+                        dice2 = generator.nextInt(6) + 1;
+                        valOfDie = " Round " + x + ": Dice 1: " + dice1 + " Dice 2: " + dice2;
                         sumOfDie +=  dice1 + dice2;
                         System.out.println(valOfDie);
                     }
                     System.out.println("The sum is " + sumOfDie);
                     break;
-                case 5:
-                    for (int x = 0; x < numOfRound; x++){
-                        dice1 = generator.nextInt(6);
-                        dice2 = generator.nextInt(6);
-                        valOfDie += " " + dice1 + " " + dice2;
-                        sumOfDie +=  dice1 + dice2;
-                    }
 
+                case 2:
+                    for (int x = 1; x < numOfRound + 1; x++){
+                        dice1 = generator.nextInt(6) + 1;
+                        dice2 = generator.nextInt(6) + 1;
+                        valOfDie = " Round " + x + ": Dice 1: " + dice1 + " Dice 2: " + dice2;
+                        sumOfDie +=  dice1 + dice2;
+                        System.out.println(valOfDie);
+                    }
+                    System.out.println("The sum is " + sumOfDie);
                     break;
+
+                case 3:
+                    for (int x = 1; x < numOfRound + 1; x++){
+                        dice1 = generator.nextInt(6) + 1;
+                        dice2 = generator.nextInt(6) + 1;
+                        valOfDie = " Round " + x + ": Dice 1: " + dice1 + " Dice 2: " + dice2;
+                        sumOfDie +=  dice1 + dice2;
+                        System.out.println(valOfDie);
+                    }
+                    System.out.println("The sum is " + sumOfDie);
+                    break;
+
+                case 4:
+                    for (int x = 1; x < numOfRound + 1; x++){
+                        dice1 = generator.nextInt(6) + 1;
+                        dice2 = generator.nextInt(6) + 1;
+                        valOfDie = " Round " + x + ": Dice 1: " + dice1 + " Dice 2: " + dice2;
+                        sumOfDie +=  dice1 + dice2;
+                        System.out.println(valOfDie);
+                    }
+                    System.out.println("The sum is " + sumOfDie);
+                    break;
+
+                case 5:
+                    for (int x = 1; x < numOfRound + 1; x++){
+                        dice1 = generator.nextInt(6) + 1;
+                        dice2 = generator.nextInt(6) + 1;
+                        valOfDie = " Round " + x + ": Dice 1: " + dice1 + " Dice 2: " + dice2;
+                        sumOfDie +=  dice1 + dice2;
+                        System.out.println(valOfDie);
+                    }
+                    System.out.println("The sum is " + sumOfDie);
+                    break;
+
                 default:
                     System.out.println("Invalid number of rounds.");
                     System.exit(0);
