@@ -19,7 +19,7 @@ public class Average2 {
                 average += sentinel;
             }
         }
-        System.out.println("The average is: " + average / numOfNums + "\nThe sum is: " + average);
+        System.out.println("The average is: " + average / numOfNums + "\n   cThe sum is: " + average);
 
 
     }

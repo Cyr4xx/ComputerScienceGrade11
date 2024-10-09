@@ -21,6 +21,6 @@ public class CoinToss {
                 tail += 1;
             }
         }
-        System.out.println("You flipped heads: " + head + " times and flipped tails " + tail + " times");
+        System.out.print("You flipped heads: " + head + " times and flipped tails " + tail + " times");
     }
 }
