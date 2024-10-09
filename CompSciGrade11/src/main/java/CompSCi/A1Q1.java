@@ -81,17 +81,18 @@ public class A1Q1 {
                     break;
 
             }
-
-            System.out.println("Would you like to exit or roll again? (y or n): ");
-
-            answer = input.next();
-            if (answer.equals("n")){// https://stackoverflow.com/questions/8484668/java-does-not-equal-not-working This explains how we can use the "!" does not equal flag for checking strings.
-                System.out.println("Thanks for using the program!");
-
-            } else if (!answer.equals("y") && !answer.equals("n") ) {
-                System.out.println("Invalid Input.");
-                answer = "y";
-
+            while(true){
+                System.out.println("Would you like to exit or roll again? (y or n): ");
+                answer = input.next();
+                if (answer.equals("n")){// https://stackoverflow.com/questions/8484668/java-does-not-equal-not-working This explains how we can use the "!" does not equal flag for checking strings.
+                    System.out.println("Thanks for using the program!");
+                    break;
+                } else if (!answer.equals("y") && !answer.equals("n") ) {
+                    System.out.println("Invalid Input.");
+                    answer = "y";
+                } else if (answer.equals("y")) {
+                    break;
+                }
             }
         }
     }
