@@ -1,5 +1,5 @@
 // Peter Migliore
-// Tuesday, October 15
+// Friday, October 11
 // A1Q1 Do-While/Switch
 package CompSCi;
 
@@ -22,11 +22,11 @@ public class A1Q1 {
             numOfRound = input.nextInt();
             switch(numOfRound) {
                 case 1:
-                    for (int x = 1; x < numOfRound + 1; x++){
-                        dice1 = generator.nextInt(6) + 1;
+                    for (int x = 1; x < numOfRound + 1; x++){ // Iderates the for-loop based on the amount of rounds the user chose.
+                        dice1 = generator.nextInt(6) + 1; // Runs the random number calculator for both die, +1 makes the generator count from 1 instead of 0.
                         dice2 = generator.nextInt(6) + 1;
-                        valOfDie = "Round " + x + "- Dice 1: " + dice1 + " Dice 2: " + dice2;
-                        sumOfDie +=  dice1 + dice2;
+                        valOfDie = "Round " + x + "- Dice 1: " + dice1 + " Dice 2: " + dice2; // Prints the value of each dice roll.
+                        sumOfDie +=  dice1 + dice2; // Adds up the dice roll.
                         System.out.println(valOfDie);
                     }
                     System.out.println("The sum is " + sumOfDie);
@@ -84,10 +84,10 @@ public class A1Q1 {
             while(true){
                 System.out.println("Would you like to exit or roll again? (y or n): ");
                 answer = input.next();
-                if (answer.equals("n")){// https://stackoverflow.com/questions/8484668/java-does-not-equal-not-working This explains how we can use the "!" does not equal flag for checking strings.
+                if (answer.equals("n")){ // Checks if the users input equals n or y or something else and runs the according code.
                     System.out.println("Thanks for using the program!");
                     break;
-                } else if (!answer.equals("y") && !answer.equals("n") ) {
+                } else if (!answer.equals("y") && !answer.equals("n") ) { // https://stackoverflow.com/questions/8484668/java-does-not-equal-not-working This explains how we can use the "!" does not equal flag for checking strings.
                     System.out.println("Invalid Input.");
                     answer = "y";
                 } else if (answer.equals("y")) {
