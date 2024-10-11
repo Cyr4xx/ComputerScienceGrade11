@@ -20,6 +20,11 @@ public class A1Q1 {
         while(answer.equals("y")){
             System.out.println("How many rounds of two-dice would you like to roll? (Please pick a number from 1 - 5): ");
             numOfRound = input.nextInt();
+            if (numOfRound > 5 || numOfRound < 1){
+                System.out.println("Invalid Input.");
+                continue;
+
+            }
             switch(numOfRound) {
                 case 1:
                     for (int x = 1; x < numOfRound + 1; x++){ // Iderates the for-loop based on the amount of rounds the user chose.
@@ -76,10 +81,6 @@ public class A1Q1 {
                     System.out.println("The sum is " + sumOfDie);
                     break;
 
-                default:
-                    System.out.println("Invalid number of rounds.");
-                    break;
-
             }
             while(true){
                 System.out.println("Would you like to exit or roll again? (y or n): ");
@@ -97,3 +98,8 @@ public class A1Q1 {
         }
     }
 }
+// Welcome then ask for # rounds to dice to roll (not asking exit)
+// Use switch statement for number of rounds
+// INvalid input for # rounds, loop it back to original question
+// out put is formated corectly
+// after first time ask user if want to hgo again
