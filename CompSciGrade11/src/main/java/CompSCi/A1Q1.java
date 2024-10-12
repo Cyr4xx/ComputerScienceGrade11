@@ -98,8 +98,3 @@ public class A1Q1 {
         }
     }
 }
-// Welcome then ask for # rounds to dice to roll (not asking exit)
-// Use switch statement for number of rounds
-// INvalid input for # rounds, loop it back to original question
-// out put is formated corectly
-// after first time ask user if want to hgo again
