@@ -52,10 +52,3 @@ public class A1Q2 {
     }
 
 }
-// comments
-// Start program with option to quit
-// user input needs to be integers
-// check your calculations properly
-// use a do while loop
-// use switch statmenet
-// Must be java file
