@@ -6,12 +6,55 @@ import java.math.*;
 public class Test {
     public static void main(String[] args){
         Random generator = new Random();
-        int randomValue; // Can initalize variables without defining a value. ex. you dont need an = sign
-        for (int i = 1; i<= 10; i++){
-            randomValue = generator.nextInt(20) + 10;
-            System.out.println(randomValue);
-
-        }
-
-    }
-}
+        cardSuites[0] = "A";
+        cardSuites[1] = "2";
+        cardSuites[2] = "3";
+        cardSuites[3] = "4";
+        cardSuites[4] = "5";
+        cardSuites[5] = "6";
+        cardSuites[6] = "7";
+        cardSuites[7] = "8";
+        cardSuites[8] = "9";
+        cardSuites[9] = "10";
+        cardSuites[10] = "J";
+        cardSuites[11] = "Q";
+        cardSuites[12] = "K";
+        cardSuites[13] = "A";
+        cardSuites[14] = "2";
+        cardSuites[15] = "3";
+        cardSuites[16] = "4";
+        cardSuites[17] = "5";
+        cardSuites[18] = "6";
+        cardSuites[19] = "7";
+        cardSuites[20] = "8";
+        cardSuites[21] = "9";
+        cardSuites[22] = "10";
+        cardSuites[23] = "J";
+        cardSuites[24] = "Q";
+        cardSuites[25] = "K";
+        cardSuites[26] = "A";
+        cardSuites[27] = "2";
+        cardSuites[28] = "3";
+        cardSuites[29] = "4";
+        cardSuites[30] = "5";
+        cardSuites[31] = "6";
+        cardSuites[32] = "7";
+        cardSuites[33] = "8";
+        cardSuites[34] = "9";
+        cardSuites[35] = "10";
+        cardSuites[36] = "J";
+        cardSuites[37] = "Q";
+        cardSuites[38] = "K";
+        cardSuites[39] = "A";
+        cardSuites[40] = "2";
+        cardSuites[41] = "3";
+        cardSuites[42] = "4";
+        cardSuites[43] = "5";
+        cardSuites[44] = "6";
+        cardSuites[45] = "7";
+        cardSuites[46] = "8";
+        cardSuites[47] = "9";
+        cardSuites[48] = "10";
+        cardSuites[49] = "J";
+        cardSuites[50] = "Q";
+        cardSuites[51] = "K";
