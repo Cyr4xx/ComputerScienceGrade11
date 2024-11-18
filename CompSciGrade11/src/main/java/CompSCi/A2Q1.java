@@ -8,9 +8,7 @@ import java.util.*;
 public class A2Q1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Random random = new Random();
         System.out.println("Welcome to the super advanced ultimate card shuffling program!");
-        boolean flag = true;
         int answer = -1;
         int numHands = 0;
         int numCards = 0;
@@ -136,47 +134,64 @@ public class A2Q1 {
             } catch (Exception e) {
                 input.nextLine();
                 System.out.println("Letters are not allowed.");
+                continue;
             }
 
 
             switch (answer) {
                 case 1:
-                    System.out.println("The deck is: " + deckPrint(cardValue, cardSuites));
+                    System.out.println("\nThe deck is: " + deckPrint(cardValue, cardSuites));
                     answer = -1;
                     break;
                 case 2:
-                    System.out.println("The deck is now: " + shuffle(cardValue, cardSuites));
+                    System.out.println("\nThe deck is now: " + shuffle(cardValue, cardSuites));
                     answer = -1;
                     break;
                 case 3:
                     System.out.println("Welcome to the dealer!");
-                    System.out.println("Enter the number of hands you would like to draw: ");
-                    try {
-                        numHands = input.nextInt();
-
-                    } catch (Exception e) {
-                        input.nextLine();
-                        System.out.println("That is not an integer.");
-
+                    while (true){
+                        System.out.println("Enter the number of hands you would like to draw: "); //put this into its own loop
+                        try {
+                            numHands = input.nextInt();
+                            if (numHands <= 0) {
+                                System.out.println("Invalid input."); // If input is less then or equal to 0, returns an error.
+                                continue;
+                            }if (numHands >= 53){
+                                System.out.println("Not enough cards in a deck.");
+                            }else {
+                                break;
+                            }
+                        } catch (Exception e) {
+                            input.nextLine();
+                            System.out.println("That is not an integer."); // If a letter is entered its caught by this exception handler.
+                            continue;
+                        }
                     }
-                    if (numHands <= 0) {
-                        System.out.println("No negative integers or zero.");
 
-                    }
+                    while (true){
+                        System.out.println("Enter the number of cards you would like in each hand: "); //put this into its own loop
+                        try {
+                            numCards = input.nextInt();
+                            if (numCards <= 0) {
+                                System.out.println("No negative integers or zero.");
+                                continue;
+                            }
+                            if (numCards >= 53){
+                                System.out.println("Not enough cards in a deck.");
+                                continue;
+                            }else {
+                                break;
+                            }
+                        } catch (Exception e) {
+                            input.nextLine();
+                            System.out.println("That is not an integer.");
+                            continue;
+                        }
 
-                    System.out.println("Enter the number of cards you would like in each hand: ");
-                    try {
-                        numCards = input.nextInt();
-                    } catch (Exception e) {
-                        input.nextLine();
-                        System.out.println("That is not an integer.");
-
-                    }
-                    if (numCards <= 0) {
-                        System.out.println("No negative integers or zero.");
                     }
                     if (numHands * numCards >= 53){
                         System.out.println("Not enough cards in a deck.");
+                        continue;
                     }
                     System.out.println(dealer(numHands, numCards, cardValue, cardSuites));
                     answer = -1;
@@ -221,6 +236,7 @@ public class A2Q1 {
         String hand = ""; // Initializes variable.
         boolean[] used = new boolean[52];
         String[] amount = new String[cards];
+
         for (int i = 0; i != hands; i++) {
             int total = 0; // Resets the total after each hand.
             hand += "\nHand #" + (i + 1) + ":\n";
@@ -229,9 +245,11 @@ public class A2Q1 {
                 while(used[deal] == true){
                     deal = random.nextInt(52);
                 }
+
                 used[deal] = true;
                 amount[j] = value[deal];
                 hand += value[deal] + " of " + suites[deal] +"\n";
+
                 if (j == cards -  1){
                     for (int k = 0; k != amount.length; k++){
                         if (amount[k].equals("Jack") || amount[k].equals("Queen") || amount[k].equals("King")){
