@@ -1,11 +1,9 @@
-// Peter Migliore
-// Thursday, November 7
-// Assignment 3 - Arrays
+
 package CompSCi;
 
 import java.util.*;
 
-public class A2Q1 {
+public class fix {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Random random = new Random();
