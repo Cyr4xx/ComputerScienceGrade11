@@ -1,5 +1,5 @@
 // Peter Migliore
-// Thursday, November 7
+// Tuesday, November 19
 // Assignment 3 - Arrays
 package CompSCi;
 
@@ -13,59 +13,59 @@ public class A2Q1 {
         int numHands = 0;
         int numCards = 0;
 
-        String[] cardSuites = new String[52];
-        cardSuites[0] = "Spades";
-        cardSuites[1] = "Spades";
-        cardSuites[2] = "Spades";
-        cardSuites[3] = "Spades";
-        cardSuites[4] = "Spades";
-        cardSuites[5] = "Spades";
-        cardSuites[6] = "Spades";
-        cardSuites[7] = "Spades";
-        cardSuites[8] = "Spades";
-        cardSuites[9] = "Spades";
-        cardSuites[10] = "Spades";
-        cardSuites[11] = "Spades";
-        cardSuites[12] = "Spades";
-        cardSuites[13] = "Diamonds";
-        cardSuites[14] = "Diamonds";
-        cardSuites[15] = "Diamonds";
-        cardSuites[16] = "Diamonds";
-        cardSuites[17] = "Diamonds";
-        cardSuites[18] = "Diamonds";
-        cardSuites[19] = "Diamonds";
-        cardSuites[20] = "Diamonds";
-        cardSuites[21] = "Diamonds";
-        cardSuites[22] = "Diamonds";
-        cardSuites[23] = "Diamonds";
-        cardSuites[24] = "Diamonds";
-        cardSuites[25] = "Diamonds";
-        cardSuites[26] = "Hearts";
-        cardSuites[27] = "Hearts";
-        cardSuites[28] = "Hearts";
-        cardSuites[29] = "Hearts";
-        cardSuites[30] = "Hearts";
-        cardSuites[31] = "Hearts";
-        cardSuites[32] = "Hearts";
-        cardSuites[33] = "Hearts";
-        cardSuites[34] = "Hearts";
-        cardSuites[35] = "Hearts";
-        cardSuites[36] = "Hearts";
-        cardSuites[37] = "Hearts";
-        cardSuites[38] = "Hearts";
-        cardSuites[39] = "Clubs";
-        cardSuites[40] = "Clubs";
-        cardSuites[41] = "Clubs";
-        cardSuites[42] = "Clubs";
-        cardSuites[43] = "Clubs";
-        cardSuites[44] = "Clubs";
-        cardSuites[45] = "Clubs";
-        cardSuites[46] = "Clubs";
-        cardSuites[47] = "Clubs";
-        cardSuites[48] = "Clubs";
-        cardSuites[49] = "Clubs";
-        cardSuites[50] = "Clubs";
-        cardSuites[51] = "Clubs";
+        String[] cardSuits = new String[52];
+        cardSuits[0] = "Spades";
+        cardSuits[1] = "Spades";
+        cardSuits[2] = "Spades";
+        cardSuits[3] = "Spades";
+        cardSuits[4] = "Spades";
+        cardSuits[5] = "Spades";
+        cardSuits[6] = "Spades";
+        cardSuits[7] = "Spades";
+        cardSuits[8] = "Spades";
+        cardSuits[9] = "Spades";
+        cardSuits[10] = "Spades";
+        cardSuits[11] = "Spades";
+        cardSuits[12] = "Spades";
+        cardSuits[13] = "Diamonds";
+        cardSuits[14] = "Diamonds";
+        cardSuits[15] = "Diamonds";
+        cardSuits[16] = "Diamonds";
+        cardSuits[17] = "Diamonds";
+        cardSuits[18] = "Diamonds";
+        cardSuits[19] = "Diamonds";
+        cardSuits[20] = "Diamonds";
+        cardSuits[21] = "Diamonds";
+        cardSuits[22] = "Diamonds";
+        cardSuits[23] = "Diamonds";
+        cardSuits[24] = "Diamonds";
+        cardSuits[25] = "Diamonds";
+        cardSuits[26] = "Hearts";
+        cardSuits[27] = "Hearts";
+        cardSuits[28] = "Hearts";
+        cardSuits[29] = "Hearts";
+        cardSuits[30] = "Hearts";
+        cardSuits[31] = "Hearts";
+        cardSuits[32] = "Hearts";
+        cardSuits[33] = "Hearts";
+        cardSuits[34] = "Hearts";
+        cardSuits[35] = "Hearts";
+        cardSuits[36] = "Hearts";
+        cardSuits[37] = "Hearts";
+        cardSuits[38] = "Hearts";
+        cardSuits[39] = "Clubs";
+        cardSuits[40] = "Clubs";
+        cardSuits[41] = "Clubs";
+        cardSuits[42] = "Clubs";
+        cardSuits[43] = "Clubs";
+        cardSuits[44] = "Clubs";
+        cardSuits[45] = "Clubs";
+        cardSuits[46] = "Clubs";
+        cardSuits[47] = "Clubs";
+        cardSuits[48] = "Clubs";
+        cardSuits[49] = "Clubs";
+        cardSuits[50] = "Clubs";
+        cardSuits[51] = "Clubs";
 
         String[] cardValue = new String[52];
         cardValue[0] = "2";
@@ -140,11 +140,11 @@ public class A2Q1 {
 
             switch (answer) {
                 case 1:
-                    System.out.println("\nThe deck is: " + deckPrint(cardValue, cardSuites));
+                    System.out.println("\nThe deck is: " + deckPrint(cardValue, cardSuits));
                     answer = -1;
                     break;
                 case 2:
-                    System.out.println("\nThe deck is now: " + shuffle(cardValue, cardSuites));
+                    System.out.println("\nThe deck is now: " + shuffle(cardValue, cardSuits));
                     answer = -1;
                     break;
                 case 3:
@@ -189,11 +189,11 @@ public class A2Q1 {
                         }
 
                     }
-                    if (numHands * numCards >= 53){
+                    if (numHands * numCards >= 53){ // TO-DO, Make reloop to beginning.
                         System.out.println("Not enough cards in a deck.");
                         continue;
                     }
-                    System.out.println(dealer(numHands, numCards, cardValue, cardSuites));
+                    System.out.println(dealer(numHands, numCards, cardValue, cardSuits));
                     answer = -1;
                     break;
                 case 0:
@@ -215,7 +215,7 @@ public class A2Q1 {
         return deck;
     }
 
-    public static String shuffle(String[] value, String[] suite) { // https://en.wikipedia.org/wiki/Fisher–Yates_shuffle#The_modern_algorithm
+    public static String shuffle(String[] value, String[] suit) { // https://en.wikipedia.org/wiki/Fisher–Yates_shuffle#The_modern_algorithm
         Random random = new Random();
         for (int i = value.length - 1; i >= 0; i--) { // This shuffling method is known as the Drustenfeld Shuffle, a widely accepted shuffling method for arrays. The for loop starts at the last value in the array, loops until its finished moving through the array from end to beginning by using i--.
             int ranIndex = random.nextInt(i + 1); // Generates a random number, between 0 and the list length, to pick a random card or suite in the array to switch around.
@@ -224,14 +224,14 @@ public class A2Q1 {
             value[i] = value[ranIndex]; // Moves the random card value or suite to the where the current card value or suite is.
             value[ranIndex] = temporaryValue; // Moves the temporary value or suite of card to a random place in the array.
 
-            String temporarySuite = suite[i]; // Repeat the same process but now for the suites. Doing both at the same time prevents duplicate cards.
-            suite[i] = suite[ranIndex];
-            suite[ranIndex] = temporarySuite;
+            String temporarySuit = suit[i]; // Repeat the same process but now for the suits. Doing both at the same time prevents duplicate cards.
+            suit[i] = suit[ranIndex];
+            suit[ranIndex] = temporarySuit;
         }
-        return deckPrint(value, suite);
+        return deckPrint(value, suit);
     }
 
-    public static String dealer(int hands, int cards, String[] value, String[] suites) {
+    public static String dealer(int hands, int cards, String[] value, String[] suits) {
         Random random = new Random();
         String hand = ""; // Initializes variable.
         boolean[] used = new boolean[52];
@@ -248,7 +248,7 @@ public class A2Q1 {
 
                 used[deal] = true;
                 amount[j] = value[deal];
-                hand += value[deal] + " of " + suites[deal] +"\n";
+                hand += value[deal] + " of " + suits[deal] +"\n";
 
                 if (j == cards -  1){
                     for (int k = 0; k != amount.length; k++){
