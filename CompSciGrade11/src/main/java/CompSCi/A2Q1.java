@@ -141,57 +141,61 @@ public class A2Q1 {
             switch (answer) {
                 case 1:
                     System.out.println("\nThe deck is: " + deckPrint(cardValue, cardSuits));
-                    answer = -1;
+                    answer = -1; // Prevents a weird error that causes an error to pop up after the next loop iteration.
                     break;
                 case 2:
                     System.out.println("\nThe deck is now: " + shuffle(cardValue, cardSuits));
                     answer = -1;
                     break;
                 case 3:
-                    System.out.println("Welcome to the dealer!");
                     while (true){
-                        System.out.println("Enter the number of hands you would like to draw: "); //put this into its own loop
-                        try {
-                            numHands = input.nextInt();
-                            if (numHands <= 0) {
-                                System.out.println("Invalid input."); // If input is less then or equal to 0, returns an error.
-                                continue;
-                            }if (numHands >= 53){
-                                System.out.println("Not enough cards in a deck.");
-                            }else {
-                                break;
-                            }
-                        } catch (Exception e) {
-                            input.nextLine();
-                            System.out.println("That is not an integer."); // If a letter is entered its caught by this exception handler.
-                            continue;
-                        }
-                    }
-
-                    while (true){
-                        System.out.println("Enter the number of cards you would like in each hand: "); //put this into its own loop
-                        try {
-                            numCards = input.nextInt();
-                            if (numCards <= 0) {
-                                System.out.println("No negative integers or zero.");
+                        System.out.println("Welcome to the dealer!");
+                        while (true){
+                            System.out.println("Enter the number of hands you would like to draw: ");
+                            try {
+                                numHands = input.nextInt();
+                                if (numHands <= 0) {
+                                    System.out.println("Invalid input."); // If input is less then or equal to 0, returns an error.
+                                    continue;
+                                }if (numHands >= 53){
+                                    System.out.println("Not enough cards in a deck.");
+                                }else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                                input.nextLine();
+                                System.out.println("That is not an integer."); // If a letter is entered its caught by this exception handler.
                                 continue;
                             }
-                            if (numCards >= 53){
-                                System.out.println("Not enough cards in a deck.");
-                                continue;
-                            }else {
-                                break;
-                            }
-                        } catch (Exception e) {
-                            input.nextLine();
-                            System.out.println("That is not an integer.");
-                            continue;
                         }
 
-                    }
-                    if (numHands * numCards >= 53){ // TO-DO, Make reloop to beginning.
-                        System.out.println("Not enough cards in a deck.");
-                        continue;
+                        while (true){
+                            System.out.println("Enter the number of cards you would like in each hand: ");
+                            try {
+                                numCards = input.nextInt();
+                                if (numCards <= 0) {
+                                    System.out.println("No negative integers or zero.");
+                                    continue;
+                                }
+                                if (numCards >= 53){
+                                    System.out.println("Not enough cards in a deck.");
+                                    continue;
+                                }else {
+                                    break;
+                                }
+                            } catch (Exception e) {
+                                input.nextLine();
+                                System.out.println("That is not an integer.");
+                                continue;
+                            }
+
+                        }
+                        if (numHands * numCards >= 53){
+                            System.out.println("Not enough cards in a deck.");
+                            continue;
+                        }else {
+                            break;
+                        }
                     }
                     System.out.println(dealer(numHands, numCards, cardValue, cardSuits));
                     answer = -1;
@@ -234,33 +238,33 @@ public class A2Q1 {
     public static String dealer(int hands, int cards, String[] value, String[] suits) {
         Random random = new Random();
         String hand = ""; // Initializes variable.
-        boolean[] used = new boolean[52];
-        String[] amount = new String[cards];
+        boolean[] used = new boolean[52]; // This array tracks what cards have been used with true if used and false if not used.
+        String[] amount = new String[cards]; // Holds the value of each card, the length of this array is based on how many cards the user wants to draw.
 
         for (int i = 0; i != hands; i++) {
             int total = 0; // Resets the total after each hand.
-            hand += "\nHand #" + (i + 1) + ":\n";
+            hand += "\nHand #" + (i + 1) + ":\n"; // States which hand this is in the final string.
             for (int j = 0; j != cards; j++) { // Iterates until it reaches the amount of cards wanted.
                 int deal = 0;
-                while(used[deal] == true){
+                while(used[deal] == true){ // Continues the loop until reaching a card that has been used
                     deal = random.nextInt(52);
                 }
 
-                used[deal] = true;
-                amount[j] = value[deal];
-                hand += value[deal] + " of " + suits[deal] +"\n";
+                used[deal] = true; // Sets the random generated card as used in the boolean used cards array.
+                amount[j] = value[deal]; // Sets amount array to card value.
+                hand += value[deal] + " of " + suits[deal] +"\n"; // Adds the complete card name to the final string.
 
                 if (j == cards -  1){
                     for (int k = 0; k != amount.length; k++){
-                        if (amount[k].equals("Jack") || amount[k].equals("Queen") || amount[k].equals("King")){
+                        if (amount[k].equals("Jack") || amount[k].equals("Queen") || amount[k].equals("King")){ // Simply checks the entire array if the card is a face, ace or number and adds the value accordingly
                             total += 10;
                         } else if (amount[k].equals("Ace")) {
                             total += 11;
                         } else {
-                            total += Integer.parseInt(amount[k]); // https://stackoverflow.com/questions/5585779/how-do-i-convert-a-string-to-an-int-in-java Parse int essentially just turns a number stored as a string into an integer.
+                            total += Integer.parseInt(amount[k]); // https://stackoverflow.com/questions/5585779/how-do-i-convert-a-string-to-an-int-in-java Parse int essentially just turns a number stored as a string into an integer. Explicit data casting cannot take place between strings and numbers, unfortunately.
                         }
                     }
-                    hand += "Total = " + total + "\n";
+                    hand += "Total = " + total + "\n"; // Finally adds the total value of all the cards of a hand to the final string.
                 }
             }
         }
