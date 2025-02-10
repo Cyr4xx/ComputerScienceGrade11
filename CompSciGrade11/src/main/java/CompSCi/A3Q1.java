@@ -8,9 +8,7 @@ public class A3Q1 {
 
 
     }
-    public static int letterInstance (char letter){
-        
-    }
+
 
     public static ArrayList<String> readFile (String words) throws IOException{
         ArrayList<String> array = new ArrayList<String>();
@@ -21,5 +19,8 @@ public class A3Q1 {
         }
         reader.close();
         return array;
+    }
+    public static int letterInstance (char letter, ArrayList<String> array){
+        for (int i = 0; i < array.len)
     }
 }
