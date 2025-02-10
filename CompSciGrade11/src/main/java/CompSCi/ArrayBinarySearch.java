@@ -35,6 +35,7 @@ public class ArrayBinarySearch {
         reader.close();
         String[] wordss = list.toArray(new String[0]);
         String word = input.next();
+        Arrays.sort(wordss);
         System.out.println(Fortnite(wordss, word));
     }
 }

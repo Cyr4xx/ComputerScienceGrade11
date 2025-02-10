@@ -7,14 +7,14 @@ public class Files1b {
     public static void main(String[] args) throws IOException{
         Scanner reader = new Scanner(new File("num.txt"));
 
-        int count = 0;
-        int sum = 0;
+            int count = 0;
+            int sum = 0;
 
-        while (reader.hasNext()){
-            sum += reader.nextInt();
-            count++;
-        }
-        reader.close();
+            while (reader.hasNext()){
+                sum += reader.nextInt();
+                count++;
+            }
+            reader.close();
 
         Scanner reader2 = new Scanner(new File("num.txt"));
         String concat = "";
