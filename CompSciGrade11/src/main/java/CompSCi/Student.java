@@ -1,7 +1,11 @@
+// Peter Migliore
+// Friday, April 18
+// Assignment 4 - Modularity and Classes
 package CompSCi;
 
 public class Student {
 
+    //The instance variables for the attributes of the student.
     private String firstName;
     private String lastName;
     private int course1;
@@ -9,6 +13,7 @@ public class Student {
     private int course3;
     private int course4;
 
+    // Constructor method that initializes each variable.
     public Student(){
         firstName = "";
         lastName = "";
@@ -18,6 +23,8 @@ public class Student {
         course4 = 0;
     }
 
+    // this. allows one to use the same variable names in a method as the instance ones, this helps reduce clutter and confusion.
+    // Set each variable to given values by the user.
     public Student (String firstName, String lastName, int course1, int course2, int course3, int course4){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -26,46 +33,71 @@ public class Student {
         this.course3 = course3;
         this.course4 = course4;
     }
+
+    // Initialize variables to match those in parameter s.
     public Student (Student s) {
-        name = s.name;
-        test1 = s.test1;
-        test2 = s.test2;
-        test3 = s.test3;
+       firstName = s.firstName;
+        lastName = s.lastName;
+        course1 = s.course1;
+        course2 = s.course2;
+        course3 = s.course3;
+        course4 = s.course4;
     }
 
-    public void setName(String sm){
-        name = sm;
+    // Sets the name of a specific student.
+    public void setName(String first, String last){
+        firstName = first;
+        lastName = last;
     }
+
+    // Gets the name of a specified student.
     public String getName(){
-        return name;
+        return lastName +", " + firstName;
     }
 
-    public void setScore(int i, int score){
-        if (i==1) test1=score;
-        else if (i==2) test2=score;
-        else if (i==3) test3=score;
+    // Sets the mark of a specified course.
+    public void setMark(int course, int mark){
+        if (course==1) course1=mark;
+        else if (course==2) course2=mark;
+        else if (course==3) course3=mark;
+        else if (course==4) course4=mark;
     }
-    public int getScore(int i){
+    // Gets the mark of a specified course.
+    public int getMark(int course){
         int score;
-        if (i==1) score=test1;
-        else if (i==2) score=test2;
-        else score=test3;
+        if (course==1) score=course1;
+        else if (course==2) score=course2;
+        else if (course==3) score=course3;
+        else score=course4;
         return score;
     }
+    // Gets the average of a specified student.
     public int getAverage(){
-        return (getScore(3) + getScore(2) + getScore(1)) / 3;
+        return (getMark(4) + getMark(3) + getMark(2) +getMark(1)) / 4;
     }
-    public int getHighScore(){
-        int highScore;
-        if (test1>test2 && test1>test3){ highScore=test1; }
-        else if (test2>test1 && test2>test3){ highScore=test2; }
-        else highScore=test3;
-        return highScore;
+
+    // Gets the highest mark of a specified student.
+    public int getHighestMark(){
+        int highMark;
+        if (course1>course2 && course1>course3 && course1>course4){ highMark=course1; }
+        else if (course2>course1 && course2>course3 && course2>course4){ highMark=course2; }
+        else if (course3>course2 && course3>course1 && course3>course4){ highMark=course3; }
+        else highMark=course4;
+        return highMark;
     }
-    public String toString(){
-        return name + " " + test1 + " " + test2 + " " + test3;
+    // Constructs the string into a report card format.
+    public String toString() {
+        String card = "";
+        if (lastName.equals("Romanoff")) { // Made a separate report card for Romanoff, due to her 100% messing up the report card formating.
+            card = "Student Name: " + lastName + ", " + firstName + "\n" + "Average Mark: " + getAverage() + "\n\n" + "Course:       " + "Final Mark:       " + "\n======        ====" + "=======       " + "\nMath          " + getMark(1) + "\nEnglish       " + getMark(2) + "\nScience" + "       " + getMark(3)
+                    + "\nArt" + "           " + getMark(4);
 
+        } else { // Full formatted report card.
+            card = "Student Name: " + lastName + ", " + firstName + "\n" + "Average Mark: " + getAverage() + "\n\n" + "Course:       " + "Final Mark:       " + "\n======        ====" + "=======       " + "\nMath          " + getMark(1) + "\nEnglish       " + getMark(2)+ "\nScience" + "       " + getMark(3)
+                    + "\nArt" + "           " + getMark(4);
 
+        }
+        return card;
     }
 
 
